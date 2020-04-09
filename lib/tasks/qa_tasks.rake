@@ -25,7 +25,7 @@ namespace :qa do
     task compile: [:yarn_install, :environment] do
       Webpacker.with_node_env("production") do
         ensure_log_goes_to_stdout do
-          if MyEngine.webpacker.commands.compile
+          if Qa.webpacker.commands.compile
             # Successful compilation!
           else
             # Failed compilation
