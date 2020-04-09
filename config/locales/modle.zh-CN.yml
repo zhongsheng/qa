@@ -1,0 +1,7 @@
+zh-CN:
+  activerecord:
+    models:
+      qa/post: 话题
+    attributes:
+      qa/post:
+        name: 名称

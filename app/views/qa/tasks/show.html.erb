@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @task.name %>
+</p>
+
+<p>
+  <strong>Deadline:</strong>
+  <%= @task.deadline %>
+</p>
+
+<p>
+  <strong>Tag ids:</strong>
+  <%= @task.tag_ids %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @task.user_id %>
+</p>
+<% @task.talks.each do |talk| %>
+    <%= talk.content.to_s.sub('/qa/', '/').html_safe %>
+<% end %>
+
+<div style=''>
+<%= form_with(model: @talk) do |form| %>
+  <%= form.hidden_field :task_id, value: @task.id %>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.rich_text_area :content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+</div>

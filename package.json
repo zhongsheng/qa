@@ -1,0 +1,21 @@
+{
+  "name": "app",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "@rails/actioncable": "^6.0.0",
+    "@rails/actiontext": "^6.0.2-2",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "trix": "^1.2.3",
+    "turbolinks": "^5.2.0"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "@rails/webpacker": "^5.0.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
