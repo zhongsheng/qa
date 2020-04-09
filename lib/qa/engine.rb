@@ -2,10 +2,10 @@ module Qa
   class Engine < ::Rails::Engine
     isolate_namespace Qa
 
-    #  config.app_middleware.use(
-    #   Rack::Static,
-    #   urls: ["/qa-packs"], root: "qa/public"
-    # )
+     config.app_middleware.use(
+      Rack::Static,
+      urls: ["/qa-packs"], root: ::Qa::Engine.root.join('public').to_s
+    )
 
     initializer "webpacker.proxy" do |app|
         insert_middleware = begin
