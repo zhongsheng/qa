@@ -10,5 +10,4 @@ test/dummy/tmp/
 node_modules/
 tmp/
 test/
-public/
 yarn-error.log

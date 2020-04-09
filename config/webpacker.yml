@@ -3,7 +3,7 @@
 default: &default
   source_path: app/javascript
   source_entry_path: packs
-  public_root_path: ../public
+  public_root_path: public
   public_output_path: qa-packs
   cache_path: tmp/cache/webpacker
   check_yarn_integrity: false
@@ -51,8 +51,8 @@ default: &default
 development:
   <<: *default
   compile: true
-  public_root_path: test/dummy/public
-  public_output_path: qa-packs
+  # public_root_path: test/dummy/public
+  # public_output_path: qa-packs
 
   # Verifies that correct packages and versions are installed by inspecting package.json, yarn.lock, and node_modules
   check_yarn_integrity: true
