@@ -15,10 +15,10 @@
 //= require_tree .
 require("turbolinks").start()
 require("@rails/activestorage").start()
-// require("@fortawesome/fontawesome-free/css/all")
+require("@fortawesome/fontawesome-free/css/all")
 
 require("trix")
 require("trix/dist/trix")
 require("@rails/actiontext")
 
-// import '../styles/main.scss'
+import '../styles/main.scss'

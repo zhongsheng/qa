@@ -19,8 +19,9 @@
   <strong>User:</strong>
   <%= @task.user_id %>
 </p>
+
 <% @task.talks.each do |talk| %>
-    <%= talk.content.to_s.sub('/qa/', '/').html_safe %>
+    <%= talk.content_modifier %>
 <% end %>
 
 <div style=''>
@@ -32,8 +33,9 @@
     <%= form.rich_text_area :content %>
   </div>
 
+  <br />
   <div class="actions">
-    <%= form.submit %>
+      <%= form.submit '提交', class: 'btn btn-info  float-right' %>
   </div>
 <% end %>
 
