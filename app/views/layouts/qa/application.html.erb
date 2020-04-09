@@ -50,16 +50,12 @@
                     </div>
                     <br />
 
-                        <div class='container-fluid'>
+                    <div class='qa-list container-fluid'>
                         <% Qa::Theme.all.each do |theme| %>
                             <% if @theme.present? && @theme.id == theme.id %>
-                                <h4 class='qa-theme-select'>
-                                    <%=link_to theme.name, theme %>
-                                </h4>
+                                <%=link_to theme.name, theme, class: 'qa-theme-select' %>
                             <% else %>
-                                <h4>
-                                    <%=link_to theme.name, theme %>
-                                </h4>
+                                <%=link_to theme.name, theme %>
                             <% end %>
 
                         <% end %>
@@ -75,16 +71,12 @@
 
                         <br />
 
-                        <div class='container-fluid'>
+                        <div class='qa-list container-fluid'>
                             <% @theme.tasks.all.each do |task| %>
                                 <% if @task.present? && @task.id == task.id %>
-                                    <h4 class='qa-theme-select'>
-                                        <%=link_to task.name, theme_task_path(@theme, task) %>
-                                    </h4>
+                                    <%=link_to task.name, theme_task_path(@theme, task), class: 'qa-theme-select' %>
                                 <% else %>
-                                    <h4>
-                                        <%=link_to task.name, theme_task_path(@theme, task) %>
-                                    </h4>
+                                    <%=link_to task.name, theme_task_path(@theme, task) %>
                                 <% end %>
 
                             <% end %>
