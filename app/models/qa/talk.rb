@@ -4,7 +4,7 @@ module Qa
     has_rich_text :content
 
     def content_modifier
-      self.content.to_s.sub('/qa/rails/active_', '/rails/active_').html_safe
+      self.content.to_s.gsub('/qa/rails/active_', '/rails/active_').html_safe
     end
 
   end

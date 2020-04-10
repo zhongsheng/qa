@@ -1,4 +1,4 @@
-<%= form_with(model: [@theme, task], local: true) do |form| %>
+<%= form_with(model: [@theme, task]) do |form| %>
   <% if task.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
@@ -21,15 +21,7 @@
     <%= form.date_select :deadline %>
   </div>
 
-  <div class="field">
-    <%= form.label :tag_ids %>
-    <%= form.number_field :tag_ids %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
-  </div>
+    <%= form.hidden_field :user_id, value: @current_user.id %>
 
   <div class="actions">
     <%= form.submit %>

@@ -1,0 +1,20 @@
+<% if @theme.present? && @theme.id %>
+    <div class="m-auto qa-actions">
+        <%= link_to new_theme_task_path(@theme), class: "btn btn-primary btn-lg btn-block" do %>
+            <i class='fas fa-plus'></i> 任务
+        <% end %>
+    </div>
+
+    <br />
+
+    <div class='qa-list container-fluid'>
+        <% @theme.tasks.all.each do |task| %>
+            <% if @task.present? && @task.id == task.id %>
+                <%=link_to task.name, theme_task_path(@theme, task), class: 'qa-theme-select' %>
+            <% else %>
+                <%=link_to task.name, theme_task_path(@theme, task) %>
+            <% end %>
+
+        <% end %>
+    </div>
+<% end %>

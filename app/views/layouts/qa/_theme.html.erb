@@ -1,0 +1,17 @@
+<div class="m-auto qa-actions">
+    <%= link_to new_theme_path(), class: "btn btn-primary btn-lg btn-block" do %>
+        <i class='fas fa-plus'></i> 项目
+    <% end %>
+</div>
+<br />
+
+<div class='qa-list container-fluid'>
+    <% Qa::Theme.all.each do |theme| %>
+        <% if @theme.present? && @theme.id == theme.id %>
+            <%=link_to theme.name, theme, class: 'qa-theme-select' %>
+        <% else %>
+            <%=link_to theme.name, theme %>
+        <% end %>
+
+    <% end %>
+</div>

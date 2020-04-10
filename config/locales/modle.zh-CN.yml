@@ -2,6 +2,16 @@ zh-CN:
   activerecord:
     models:
       qa/post: 话题
+      qa/theme: 项目
+      qa/task: 任务
+      qa/talk: 讨论
     attributes:
+      qa/task:
+        name: 名称
+        deadline: 截止时间
+      qa/talk:
+        content: 回复
+      qa/theme:
+        name: 名称
       qa/post:
         name: 名称

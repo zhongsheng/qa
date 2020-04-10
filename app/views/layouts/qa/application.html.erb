@@ -17,84 +17,24 @@
     <body>
 
         <header>
-
-            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-                <a class="navbar-brand" href="#">QA System </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/qa/">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/"> Main System Site</a>
-                        </li>
-                    </ul>
-                    <form class="form-inline mt-2 mt-md-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                    <span>         <%= current_user.name %> <i class='fas fa-user'></i>
-                    </span>
-                </div>
-            </nav>
+            <%= render 'layouts/qa/nav' %>
         </header>
 
         <main role="main">
             <div class="row container-fluid" id='main'>
                 <div class="qa-col col-2">
-                    <div class="m-auto qa-actions">
-                        <%= link_to 'New Theme', new_theme_path(), class: "btn btn-primary btn-lg btn-block" %>
-                    </div>
-                    <br />
-
-                    <div class='qa-list container-fluid'>
-                        <% Qa::Theme.all.each do |theme| %>
-                            <% if @theme.present? && @theme.id == theme.id %>
-                                <%=link_to theme.name, theme, class: 'qa-theme-select' %>
-                            <% else %>
-                                <%=link_to theme.name, theme %>
-                            <% end %>
-
-                        <% end %>
-                    </div>
-
-
+                    <%= render 'layouts/qa/theme' %>
                 </div>
                 <div class="qa-col col-2" style='background: #ECECEC'>
-                    <% if @theme.present? && @theme.id %>
-                        <div class="m-auto qa-actions">
-                            <%= link_to 'New Task', new_theme_task_path(@theme), class: "btn btn-primary btn-lg btn-block" %>
-                        </div>
-
-                        <br />
-
-                        <div class='qa-list container-fluid'>
-                            <% @theme.tasks.all.each do |task| %>
-                                <% if @task.present? && @task.id == task.id %>
-                                    <%=link_to task.name, theme_task_path(@theme, task), class: 'qa-theme-select' %>
-                                <% else %>
-                                    <%=link_to task.name, theme_task_path(@theme, task) %>
-                                <% end %>
-
-                            <% end %>
-                        </div>
-                    <% end %>
+                    <%= render 'layouts/qa/task' %>
                 </div>
 
                 <div class="qa-col col-8">
-                    <div class="container-fluid">
+                    <div class="container-fluid  py-2">
                         <%= yield %>
                     </div>
-
-
                 </div>
-
             </div>
-
-
         </main>
 
     </body>

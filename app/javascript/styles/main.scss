@@ -23,6 +23,11 @@ html, body, main, #main {
         padding: 5px;
         font-size: 17px;
         color: #333;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    a:hover {
+        background: #EEE;
     }
 }
 .field label {
