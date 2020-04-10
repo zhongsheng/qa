@@ -28,9 +28,9 @@ module Qa
       @task = Task.find talk_params[:task_id]
 
       if @talk.save
-        redirect_to theme_task_url(@task.theme_id, @task), notice: 'Talk was successfully created.'
+        # render js: 'alert("hi")'
       else
-        render :new
+        render js: 'alert("Error")'
       end
     end
 

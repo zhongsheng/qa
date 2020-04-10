@@ -1,19 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<% @task.talks.each do |talk| %>
-    <%= talk.content_modifier %>
-<% end %>
+<div id='talks-box'>
+    <%= @task.talk_contents %>
+</div>
 
-<div style=''>
-<%= form_with(model: @talk) do |form| %>
-  <%= form.hidden_field :task_id, value: @task.id %>
+
+<br />
+<%= form_with(model: @talk, remote: true, class: 'talk-form') do |form| %>
+    <%= form.hidden_field :task_id, value: @task.id %>
 
     <%= form.rich_text_area :content %>
-
-  <br />
-  <div class="actions">
-      <%= form.submit '提交', class: 'btn btn-info  float-right' %>
-  </div>
+    <br />
+    <div class="actions talk-submit">
+        <%= form.submit '提交', class: 'btn btn-info  float-right' %>
+    </div>
 <% end %>
-
-</div>

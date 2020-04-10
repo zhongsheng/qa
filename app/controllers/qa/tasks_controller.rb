@@ -13,10 +13,6 @@ module Qa
     # GET /tasks/1
     def show
       @talk = Talk.new
- @task.talks.each do |talk|
-   pp talk.content.to_s
- end
-
     end
 
     # GET /tasks/new
@@ -57,17 +53,17 @@ module Qa
     end
 
     private
-      # Use callbacks to share common setup or constraints between actions.
-      def set_task
-        @task = Task.find(params[:id])
-      end
+    # Use callbacks to share common setup or constraints between actions.
+    def set_task
+      @task = Task.find(params[:id])
+    end
 
-      def set_theme
-        @theme = Theme.find(params[:theme_id])
-      end
-      # Only allow a trusted parameter "white list" through.
-      def task_params
-        params.require(:task).permit(:name, :deadline, :tag_ids, :user_id)
-      end
+    def set_theme
+      @theme = Theme.find(params[:theme_id])
+    end
+    # Only allow a trusted parameter "white list" through.
+    def task_params
+      params.require(:task).permit(:name, :deadline, :tag_ids, :user_id)
+    end
   end
 end

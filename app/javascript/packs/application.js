@@ -21,4 +21,7 @@ require("trix")
 require("trix/dist/trix")
 require("@rails/actiontext")
 
+// import Rails from '@rails/ujs'
+require("@rails/ujs").start()
+
 import '../styles/main.scss'

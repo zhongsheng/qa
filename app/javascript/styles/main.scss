@@ -33,3 +33,12 @@ html, body, main, #main {
 .field label {
     width: 100px;
 }
+
+.talk-form {
+    position: relative;
+}
+.talk-submit {
+    position: absolute;
+    right: 10px;
+    bottom: 30px;
+}
