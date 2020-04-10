@@ -1,4 +1,4 @@
-<%= form_with(model: theme) do |form| %>
+<%= form_with(model: theme, local: true) do |form| %>
   <% if theme.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(theme.errors.count, "error") %> prohibited this theme from being saved:</h2>

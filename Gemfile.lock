@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    qa (0.1.6)
+    qa (0.1.7)
       rails (~> 6.0.1)
       webpacker (~> 4.0)
 
