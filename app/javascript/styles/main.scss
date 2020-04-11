@@ -15,7 +15,7 @@ html, body, main, #main {
 }
 
 .qa-theme-select {
-    background: #FFFFD7;
+    background: #E3E3E3;
 }
 .qa-list {
     a {
@@ -23,11 +23,32 @@ html, body, main, #main {
         padding: 5px;
         font-size: 17px;
         color: #333;
-        font-weight: bold;
         text-decoration: none;
     }
     a:hover {
-        background: #EEE;
+        background: #E3E3E3;
+    }
+}
+.qa-theme-box {
+    .qa-list {
+      padding-right: 0;
+    }
+}
+.qa-task-box {
+    .qa-list {
+      padding: 0;
+    a {
+        padding-left: 15px;
+    }
+    a:hover {
+        background: white;
+    }
+    }
+    .qa-current-task {
+        background: white;
+    }
+    .qa-status-done {
+        color: #999;
     }
 }
 .field label {
@@ -41,4 +62,34 @@ html, body, main, #main {
     position: absolute;
     right: 10px;
     bottom: 30px;
+}
+
+
+.qa-talk-wrap:hover {
+    background: #FAFAFA;
+}
+.qa-talk-wrap {
+    position: relative;
+    padding-bottom: 0.5rem;
+    .attachment__caption {
+        display: none;
+    }
+    .qa-talk-user {
+        padding: 5px;
+    background: rgba(255,255,255,0.60);
+        position: absolute;
+        top: 0;
+        right: 0;
+        h5 {
+            font-size: 11px;
+            color: #DDD;
+            line-height: 0;
+            margin: 0;
+            padding: 0;
+        }
+        span {
+            font-size: 10px;
+            color: #DDD;
+        }
+    }
 }

@@ -1,4 +1,41 @@
 <p id="notice"><%= notice %></p>
+<div class="d-flex justify-content-between alert alert-dark qa-task-meta" role="alert">
+    <div>
+        创建人:  <span class="badge badge-light">  <%= @task.user_name %> </span>
+    </div>
+
+    <div>
+        时间: <span class="badge badge-light"> <%= @task.created_at.to_s(:short) %> </span>
+    </div>
+
+
+    <div>
+        状态:
+        <% if @task.todo? %>
+            <span class="badge badge-danger">
+                <%= @task.status %>
+            </span>
+        <% else %>
+
+            <span class="badge badge-info">
+                <%= @task.status %>
+            </span>
+        <% end %>
+
+    </div>
+
+    <% if @task.todo? %>
+        <div>
+            <%=link_to done_theme_task_path(@theme, @task), class: "btn btn-inf" do %>
+                <i class="fas fa-archive"></i>
+            <% end %>
+
+        </div>
+
+    <% end %>
+
+
+</div>
 
 <div id='talks-box'>
     <%= @task.talk_contents %>
@@ -8,6 +45,7 @@
 <br />
 <%= form_with(model: @talk, remote: true, class: 'talk-form') do |form| %>
     <%= form.hidden_field :task_id, value: @task.id %>
+    <%= form.hidden_field :user_id, value: @current_user.id %>
 
     <%= form.rich_text_area :content %>
     <br />

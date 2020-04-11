@@ -2,7 +2,7 @@ require_dependency "qa/application_controller"
 
 module Qa
   class TasksController < ApplicationController
-    before_action :set_task, only: [:show, :edit, :update, :destroy]
+    before_action :set_task, only: [:show, :edit, :update, :destroy, :done]
     before_action :set_theme
 
     # GET /tasks
@@ -13,6 +13,11 @@ module Qa
     # GET /tasks/1
     def show
       @talk = Talk.new
+    end
+
+    def done
+      @task.done!
+      redirect_to theme_task_url(@theme, @task)
     end
 
     # GET /tasks/new
