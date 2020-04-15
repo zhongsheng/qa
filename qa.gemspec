@@ -7,8 +7,7 @@ require "qa/version"
 Gem::Specification.new do |spec|
   spec.name        = "qa"
   spec.version     = Qa::VERSION
-  spec.authors     = ["zhongsheng
-"]
+  spec.authors     = ["zhongsheng"]
   spec.email       = ["nily.zhong@gmail.com"]
   spec.homepage    = "http://blog.dzunion.cn"
   spec.summary     = "Summary of Qa."

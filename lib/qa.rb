@@ -2,7 +2,8 @@ require "qa/engine"
 require "active_storage/engine"
 
 module Qa
-  # Your code goes here...
+  mattr_accessor :main_app_path
+  Qa.main_app_path ||= '/'
   ROOT_PATH = Pathname.new(File.join(__dir__, ".."))
 
   class << self
