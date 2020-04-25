@@ -1,5 +1,5 @@
 module Qa
-  class ApplicationController < ::AuthBaseController
+  class ApplicationController < Qa.main_controller
     protect_from_forgery with: :exception
     before_action :set_current_user
 
