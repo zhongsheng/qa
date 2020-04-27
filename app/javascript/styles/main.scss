@@ -15,7 +15,7 @@ html, body, main, #main {
 }
 
 .qa-theme-select {
-    background: #E3E3E3;
+    background: #131313;
 }
 .qa-list {
     a {
@@ -91,5 +91,23 @@ html, body, main, #main {
             font-size: 10px;
             color: #DDD;
         }
+    }
+}
+
+#show-task-list {
+    background: #EEE;
+    position: absolute;
+    z-index: 99999;
+    right: 5px;
+    top: 70px;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    main {
+        .qa-theme-box, .qa-task-box {
+            display: none;
+        }
+
     }
 }

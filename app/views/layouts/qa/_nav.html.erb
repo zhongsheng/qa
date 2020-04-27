@@ -8,6 +8,23 @@
             <li class="nav-item">
                 <a class="nav-link" href="<%= Qa.main_app_path %>"> 首页 </a>
             </li>
+
+            <li class='nav-item'>
+                <%= link_to new_theme_path(), class: "nav-link" do %>
+                    <i class='fas fa-plus'></i> 项目
+                <% end %>
+            </li>
+
+    <% Qa::Theme.all.each do |theme| %>
+        <li class="nav-item">
+            <% if @theme.present? && @theme.id == theme.id %>
+                <%=link_to theme.name, theme, class: 'nav-link qa-theme-select' %>
+            <% else %>
+                <%=link_to theme.name, theme, class: 'nav-link' %>
+            <% end %>
+        </li>
+
+    <% end %>
             <li class='nav-item'>
                 <a class='nav-link' href="https://danish.dzunion.cn//video/20200425_133125.mp4">如何创建任务?</a>
             </li>

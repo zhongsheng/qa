@@ -1,6 +1,39 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <%= @theme.user_name %>
-  <%= @theme.name %>
+    <%= @theme.user_name %>
+    <%= @theme.name %>
 </p>
+
+<% if @theme.present? && @theme.id %>
+    <div class="m-auto qa-actions">
+        <%= link_to new_theme_task_path(@theme), class: "btn btn-primary btn-lg btn-block" do %>
+            <i class='fas fa-plus'></i> 任务
+        <% end %>
+    </div>
+
+    <br />
+
+    <div class='qa-list container-fluid'>
+        <% @theme.all_todo_tasks.each do |task| %>
+            <%=link_to(
+                theme_task_path(@theme, task),
+                class: task.css_class(@task)
+            ) do %>
+                <i class="fas fa-project-diagram"></i>
+                <%= task.name %>
+            <% end %>
+        <% end %>
+        <hr />
+
+        <% @theme.all_done_tasks.each do |task| %>
+            <%=link_to(
+                theme_task_path(@theme, task),
+                class: task.css_class(@task)
+            ) do %>
+                <i class="fas fa-archive"></i>
+                <%= task.name %>
+            <% end %>
+        <% end %>
+    </div>
+<% end %>

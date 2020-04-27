@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Qa</title>
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
         <%= csrf_meta_tags %>
         <%= csp_meta_tag %>
         <script src="https://danish.dzunion.cn/cdn/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -22,14 +23,11 @@
 
         <main role="main">
             <div class="row container-fluid" id='main'>
-                <div class="qa-col col-2 qa-theme-box" style='background: #D4D4D4'>
-                    <%= render 'layouts/qa/theme' %>
-                </div>
-                <div class="qa-col col-2 qa-task-box" style='background: #E3E3E3'>
+                <div class="qa-col col-6 col-md-2 qa-task-box" style='background: #E3E3E3'>
                     <%= render 'layouts/qa/task' %>
                 </div>
 
-                <div class="qa-col col-8" id='qa-main-box'>
+                <div class="qa-col col-12 col-md-8" id='qa-main-box'>
                     <div class="container-fluid  py-2" >
                         <%= yield %>
                     </div>
