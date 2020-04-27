@@ -13,5 +13,6 @@ gemspec
 
 # To use a debugger
 gem 'image_processing'
+gem 'pry-rails', group: [:development, :test]
 gem 'pry-byebug', group: [:development, :test]
 gem 'webpacker', group: [:development, :test]

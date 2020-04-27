@@ -1,6 +1,6 @@
 module Qa
   class Task < ApplicationRecord
-    # belongs_to :qa_theme
+    belongs_to :theme
     has_many :talks
     belongs_to :user, class_name: 'User'
     delegate :name, to: :user, prefix: true

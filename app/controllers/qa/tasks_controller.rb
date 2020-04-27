@@ -17,7 +17,9 @@ module Qa
 
     def done
       @task.done!
-      redirect_to theme_task_url(@theme, @task)
+      url = theme_task_url(@theme, @task)
+      ActiveSupport::Notifications.instrument "qa.task.done", task: @task, url: url
+      redirect_to url
     end
 
     # GET /tasks/new
