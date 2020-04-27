@@ -6,10 +6,10 @@ module Qa
     validates :name, presence: true
 
     def all_done_tasks
-      Task.where(theme_id: self.id, status: :done)
+      Task.where(theme_id: self.id, status: :done).order(updated_at: 'DESC')
     end
     def all_todo_tasks
-      Task.where(theme_id: self.id, status: :todo)
+      Task.where(theme_id: self.id, status: :todo).order(updated_at: 'DESC')
     end
   end
 end
