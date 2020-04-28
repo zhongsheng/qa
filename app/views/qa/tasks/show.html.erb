@@ -1,4 +1,8 @@
 <p id="notice"><%= notice %></p>
+<h3>
+    # <%= @task.name %>
+</h3>
+
 <div class="d-flex justify-content-between alert alert-dark qa-task-meta" role="alert">
     <div>
         创建人:  <span class="badge badge-light">  <%= @task.user_name %> </span>
@@ -31,10 +35,7 @@
             <% end %>
 
         </div>
-
     <% end %>
-
-
 </div>
 
 <div id='talks-box'>
