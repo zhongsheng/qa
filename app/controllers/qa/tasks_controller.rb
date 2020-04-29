@@ -38,6 +38,8 @@ module Qa
       @task.user_id = current_user.id
 
       if @task.save
+        url = theme_task_url(@theme, @task)
+        ActiveSupport::Notifications.instrument "qa.task.created", task: @task, url: url
         redirect_to theme_task_url(@theme, @task), notice: 'Task was successfully created.'
       else
         render :new

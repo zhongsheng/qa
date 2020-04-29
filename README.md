@@ -38,6 +38,9 @@ ActiveSupport::Notifications.subscribe "qa.task.done" do |*args|
   data[:task].user  # => User record object
 end
 ```
+### All Events
+- qa.task.done
+- qa.task.created
 
 ## Contributing
 Contribution directions go here.
