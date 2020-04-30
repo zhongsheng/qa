@@ -17,7 +17,7 @@ module Qa
       talks.map { |talk|
         "<div class='qa-talk-wrap'>" + \
         talk.content_modifier + \
-          "<div class='qa-talk-user'><h5>#{talk.user_name}</h5><span>#{talk.created_at.to_s(:short)}</span></div></div>".html_safe
+          "<div class='qa-talk-user'><h5>#{talk.user_name} @ <span>#{talk.created_at.to_s(:short)}</span></h5></div></div>".html_safe
       }.join.html_safe
     end
 

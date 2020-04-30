@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-    <%= @theme.user_name %>
+<h1>
     <%= @theme.name %>
-</p>
+</h1>
+<h4>
+    负责人:     <%= @theme.user_name %>
+</h4>
 
 <% if @theme.present? && @theme.id %>
     <div class="m-auto qa-actions">
@@ -15,15 +17,44 @@
     <br />
 
     <div class='qa-list container-fluid'>
-        <% @theme.all_todo_tasks.each do |task| %>
-            <%=link_to(
-                theme_task_path(@theme, task),
-                class: task.css_class(@task)
-            ) do %>
-                <i class="fas fa-project-diagram"></i>
-                <%= task.name %>
-            <% end %>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">任务</th>
+                    <th scope="col">创建时间</th>
+                    <th scope="col">截止时间</th>
+                </tr>
+            </thead>
+            <tbody>
+
+        <% @theme.all_todo_tasks.each_with_index do |task, i| %>
+            <tr>
+                <td>
+                    <%= i+1 %>
+                </td>
+                <td>
+                    <%=link_to(
+                        theme_task_path(@theme, task),
+                        class: task.css_class(@task)
+                    ) do %>
+                        <i class="fas fa-project-diagram"></i>
+                        <%= task.name %>
+                    <% end %>
+
+                </td>
+                <td>
+                    <%= task.created_at.to_s(:short) %>
+                </td>
+                <td>
+                    <%= task.deadline %>
+                </td>
+            </tr>
+            
         <% end %>
+            </tbody>
+        </table>
+
         <hr />
 
         <% @theme.all_done_tasks.each do |task| %>

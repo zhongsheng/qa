@@ -75,21 +75,16 @@ html, body, main, #main {
         display: none;
     }
     .qa-talk-user {
-        padding: 5px;
+        margin: 0;
+        padding: 0px;
     background: rgba(255,255,255,0.60);
-        position: absolute;
-        top: 0;
-        right: 0;
         h5 {
             font-size: 11px;
             color: #DDD;
             line-height: 0;
             margin: 0;
             padding: 0;
-        }
-        span {
-            font-size: 10px;
-            color: #DDD;
+            text-align: right;
         }
     }
 }
