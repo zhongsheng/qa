@@ -4,10 +4,15 @@ module Qa
   class TasksController < ApplicationController
     before_action :set_task, only: [:show, :edit, :update, :destroy, :done]
     before_action :set_theme
+    skip_before_action :set_theme, only: [:search]
 
     # GET /tasks
     def index
       @tasks = Task.all
+    end
+
+    def search
+      @tasks = Task.where('name like ?', "%#{params[:content]}%")
     end
 
     # GET /tasks/1

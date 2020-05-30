@@ -34,8 +34,7 @@
                     <%= i+1 %>
                 </td>
                 <td>
-                    <%=link_to(
-                        theme_task_path(@theme, task),
+                    <%=link_to(theme_task_path(@theme, task),
                         class: task.css_class(@task)
                     ) do %>
                         <i class="fas fa-project-diagram"></i>
